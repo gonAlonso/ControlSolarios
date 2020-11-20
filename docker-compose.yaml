@@ -11,17 +11,14 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     command: ["--replSet", "rs0"]
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_SERVER: mongo1
+
+  mongosetup:
+    image: mongo
     depends_on:
       - mongo1
+    restart: "no"
+    #command: "tail -f /dev/null"
+    command: sh -c "sleep '10' && mongo --host mongo1 --port 27017 -u root -p example --eval 'rs.secondaryOk(); rs.initiate();' && return 10;"
 
   backend:
     build:
@@ -37,6 +34,18 @@ services:
       - mongo1
     volumes:
       - "./BackendGestionSolarios:/opt/node"
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_SERVER: mongo1
+    depends_on:
+      - backend
 
   frontend:
     build:
