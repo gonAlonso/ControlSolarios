@@ -1,0 +1,36 @@
+<div id="listaUsuariosComponent" [ngClass]="{'show': this.showList}" *ngIf="this.listaUsuariosActivos; else listaError">
+  <h3 class="componen_header">Lista de usuarios</h3>
+
+
+  <div class="input-group mb-3">
+    <input type="text"
+      [(ngModel)]="searchText"
+      (keyup.enter)="buscaUsuario()"
+      class="form-control"
+      placeholder="Buscar por nombre, dni o email"/>
+    <div class="input-group-append">
+      <button class="input-group-text" (click)="limpiar()">X</button>
+    </div>
+  </div>
+
+
+  <ul *ngIf="this.listaUsuariosActivos.length!=0; else emptyList" class="breadcrumb">
+    <li *ngFor="let item of this.listaUsuariosActivos" class="breadcrumb-item">
+      <a href="#" (click)="selectUser($event,item)">
+        {{item.nombre}}
+      </a>
+    </li>
+  </ul>
+  <ng-template #emptyList>
+    <h3>Sin resultados</h3>
+  </ng-template>
+  <div>
+    <button id="hide_button" class="btn btn-danger" (click)="hide()">Cancelar</button>
+  </div>
+</div>
+
+<ng-template #listaError>
+  <div id="listaUsuariosComponent">
+    <h3>No se puede cargar la lista de usuarios</h3>
+  </div>
+</ng-template>

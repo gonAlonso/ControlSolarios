@@ -1,0 +1,55 @@
+nav a {
+  color: #fff;
+  margin: 1em 1em;
+  padding: 0em 1em;
+  flex: 1 1 30%;
+}
+
+nav {
+  min-height: 3em;
+  background-color: #222;
+  padding-top: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+
+#register_empresa {
+  margin: 2em 1em;
+}
+
+#register_empresa label, #register_empresa input {
+  display: block;
+}
+
+#register_empresa input {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#register_empresa_ok { display: none;}
+#register_empresa_ok.show {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+div#register_empresa_ok:before {
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+  background-image: url(/assets/email.png);
+  background-position: 0% bottom;
+  background-size: 500px;
+  background-repeat-y: no-repeat;
+}
+
+#register_empresa_ok * {
+  margin: auto;
+  text-align: center;
+}

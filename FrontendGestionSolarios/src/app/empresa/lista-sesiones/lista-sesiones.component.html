@@ -1,0 +1,25 @@
+<div id="listasesiones" *ngIf="this.listaSesiones; else listaError">
+  <h4 class="componen_header">Lista de sesiones</h4>
+
+  <div class="statics">
+    <label>Energia acumulada</label>
+    <meter min='0' max='1000' [(value)]="this.acumulatedEnergy"></meter>
+    <span><em>{{this.acumulatedEnergy | number: '1.2-2'}}</em> KJ</span>
+  </div>
+
+  <ul class="list-group">
+    <li *ngFor="let item of this.listaSesiones" class="list-group-item bd-callout bd-callout-warning">
+      <h4 class="fecha">Fecha: <span>{{ item.fecha | date:'short'}}</span></h4>
+      <h4 class="energia">Energia: <span>{{ item.energia | number: '1.0-1'}}</span>KJ</h4>
+      <h4 class="duracion">Duracion: <span>{{ item.duracion}}</span> min</h4>
+      <h4 class="solario">Solario: <span *ngIf="this.empresa">{{ item.solario | getSolarioName:this.empresa }}</span></h4>
+      <h4 class="operario">Operario: <span *ngIf="this.empresa">{{ item.operario | getOperarioName:this.empresa }}</span></h4>
+    </li>
+  </ul>
+</div>
+
+<ng-template #listaError>
+  <div id="listasesiones">
+    <h4>No hay lista de sesiones</h4>
+  </div>
+</ng-template>

@@ -1,0 +1,118 @@
+
+#gestion_empresa {
+  margin-top: 5em;
+}
+
+
+
+#empresa_navigation_bar a.navbar-brand {
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    margin: 0 1em;
+}
+
+  #empresa_header a {
+  color: #111;
+}
+
+#gestion_empresa.loginerror h4 {
+  color:  #F55; 
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+ 
+#gestion_empresa {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+@media (min-width: 550px) {
+  #gestion_empresa {
+    margin: 5em 1em;
+  }
+}
+
+#empresa_header {
+  flex: 4 0 100%;
+  padding-bottom: 2em;
+  font-family: 'Rajdhani', sans-serif;
+
+}
+ 
+#empresa_navigation_bar {
+  flex: 1 0 24%;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0
+}
+
+#main_content_empresa {
+  flex: 3 1 75%;
+  margin-top: 0em;
+}
+ 
+#reload_button {
+  display: block;
+  width: 100%;
+}
+ 
+ 
+div#gestion_empresa li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+div#gestion_empresa li a {
+  text-decoration: none;
+}
+
+
+@media (max-width: 991px) {
+  #main_content_empresa {
+    flex: 3 1 100%;
+    margin: 0em 0.4em;
+  }
+  #empresa_navigation_bar .navbar-nav.mr-auto a {
+    color: #b0b0b0;
+  }
+  #empresa_navigation_bar .navbar-nav.mr-auto li {
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 992px) {
+  #empresa_navigation_bar .navbar-nav.mr-auto a {
+    color: #404040;
+  }
+  #empresa_navigation_bar li {
+    margin-bottom: 1em;
+  }
+  #gestion_empresa  {
+    float: right;
+    width: calc(100% - 20em);
+  }
+
+  #empresa_navigation_bar .collapse.navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(20em);
+    float: left;
+    margin-top: 5em;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    margin-left: 1em;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

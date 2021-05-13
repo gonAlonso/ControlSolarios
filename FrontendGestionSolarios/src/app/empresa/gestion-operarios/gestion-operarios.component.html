@@ -1,0 +1,5 @@
+<div id="gestion_operarios">
+
+<app-lista-operarios [operarios]="this.empresa?.operarios" (selected)="selectOperario($event)"></app-lista-operarios>
+<app-form-operario [operario]="this.operario"></app-form-operario>
+</div>

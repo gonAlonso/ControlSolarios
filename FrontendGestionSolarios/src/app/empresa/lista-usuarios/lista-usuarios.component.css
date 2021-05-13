@@ -1,0 +1,42 @@
+#listaUsuariosComponent {
+  display: block;
+  position: fixed;
+  width: 33%;
+  right: -33%;
+  top: 4em;
+  background-color: white;
+  opacity: 1;
+  height: calc(100% - 5em);
+  border-left: 1px solid #0003;
+  padding: 0 8px;
+  transition: right 00.4s ease-in-out;
+}
+
+#listaUsuariosComponent.show {
+  right: 0;
+  transition: right 00.4s ease-in-out;
+}
+
+
+#hide_button {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  width: calc( 100% - 1em);
+}
+
+
+
+ul li { width: 100%; }
+
+ul li a {
+  display: inline-block;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  #listaUsuariosComponent {
+    width: 100%;
+    right: -100%;
+  }
+}

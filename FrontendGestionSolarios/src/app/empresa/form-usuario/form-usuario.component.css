@@ -1,0 +1,22 @@
+/* #form-usaurio {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-right: 1em;
+}
+
+#form-usaurio label {
+  flex: 1 1 19%;
+}
+#form-usaurio input,
+#form-usaurio select {
+  flex: 2 2 80%;
+}
+
+#form-usaurio .form-usuario-header,
+#form-usaurio .save_button {
+  flex: 2 0 100% !important;
+  text-align: center;
+}
+ */
